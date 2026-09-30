@@ -1,67 +1,199 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Pemrograman Web Bisnis - Login dan Logout</title>
+
   <style>
-    body{font-family:Arial,Helvetica,sans-serif;max-width:900px;margin:0 auto;padding:24px;line-height:1.6;color:#222}
-    h1{margin-bottom:0} .sub{color:#666;margin-top:4px}
-    table{border-collapse:collapse;margin:16px 0} td{padding:6px 16px 6px 0}
-    img{max-width:100%;border:1px solid #ccc;border-radius:6px;margin:8px 0 24px}
-    a{color:#0d6efd} code{background:#f3f3f3;padding:2px 6px;border-radius:4px}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+      line-height: 1.6;
+      color: #222;
+      background-color: #fff;
+    }
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin-top: 32px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 6px;
+    }
+
+    .sub {
+      color: #666;
+      margin-top: 4px;
+    }
+
+    .info-table {
+      border-collapse: collapse;
+      margin: 20px 0;
+      width: 100%;
+    }
+
+    .info-table th {
+      text-align: left;
+      width: 180px;
+      padding: 7px 10px 7px 0;
+      vertical-align: top;
+    }
+
+    .info-table td {
+      padding: 7px 0;
+      vertical-align: top;
+    }
+
+    a {
+      color: #0d6efd;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .screenshot {
+      margin: 16px 0 28px;
+    }
+
+    .screenshot img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    .caption {
+      color: #666;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    code {
+      background: #f3f3f3;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .note {
+      background: #f8f9fa;
+      border-left: 4px solid #0d6efd;
+      padding: 12px 16px;
+      margin-top: 20px;
+    }
   </style>
+
 </head>
+
 <body>
+
   <h1>Administrator dan Login</h1>
-  <p class="sub">Mata Kuliah Pemrograman Web Bisnis - Pertemuan 3</p>
 
-<table>
+  <p class="sub">
+    Mata Kuliah Pemrograman Web Bisnis - Pertemuan 3
+  </p>
+
+  <table class="info-table">
     <tr>
-        <td><b>Nama</b></td>
-        <td>: Nicholas Oktavianus</td>
+      <th>Nama</th>
+      <td>Nicholas Oktavianus</td>
     </tr>
 
-    <tr>
-        <td><b>NIM</b></td>
-        <td>: 2422500032</td>
-    </tr>
+```
+<tr>
+  <th>NIM</th>
+  <td>2422500032</td>
+</tr>
 
-    <tr>
-        <td><b>Framework</b></td>
-        <td>: CodeIgniter 3 + AdminLTE 3</td>
-    </tr>
+<tr>
+  <th>Framework</th>
+  <td>CodeIgniter 3 + AdminLTE 3</td>
+</tr>
 
-    <tr>
-        <td><b>Repository</b></td>
-        <td>: <a href="https://github.com/nicholasoktavianus/pwb_2422500032">github.com/nicholasoktavianus/pwb_2422500032</a></td>
-    </tr>
+<tr>
+  <th>Repository</th>
+  <td>
+    <a href="https://github.com/nicholasoktavianus/pwb_2422500032"
+       target="_blank"
+       rel="noopener noreferrer">
+      GitHub Repository
+    </a>
+  </td>
+</tr>
 
-    <tr>
-        <td><b>Hasil</b></td>
-        <td>: <a href="https://yukirai.gt.tc/" target="_blank">yukirai.gt.tc</a></td>
-    </tr>
+<tr>
+  <th>Hasil Project</th>
+  <td>
+    <a href="https://yukirai.gt.tc/"
+       target="_blank"
+       rel="noopener noreferrer">
+      yukirai.gt.tc
+    </a>
+  </td>
+</tr>
 
-    <tr>
-        <td><b>Login</b></td>
-        <td>: Username dan password = admin</td>
-    </tr>
-</table>
+<tr>
+  <th>Login</th>
+  <td>
+    Username: <b>admin</b><br>
+    Password: <b>admin</b>
+  </td>
+</tr>
+```
+
+  </table>
 
   <h2>Fitur</h2>
+
   <ul>
-    <li>Login administrator (validasi form dan pengecekan database)</li>
-    <li>Halaman dashboard yang hanya bisa dibuka setelah login</li>
-    <li>Logout melalui menu sidebar</li>
-    <li>Nama administrator tampil di dashboard sesuai data login</li>
+    <li>Login administrator dengan validasi form dan pengecekan database.</li>
+    <li>Halaman dashboard yang hanya dapat diakses setelah administrator berhasil login.</li>
+    <li>Fitur logout melalui menu sidebar.</li>
+    <li>Nama administrator ditampilkan pada dashboard sesuai dengan data login.</li>
   </ul>
 
   <h2>Halaman Login</h2>
-  <img src="img/login.png" alt="Halaman login">
+
+  <div class="screenshot">
+    <img src="img/login.png" alt="Halaman Login Administrator">
+    <p class="caption">
+      Gambar 1. Halaman login administrator.
+    </p>
+  </div>
 
   <h2>Halaman Dashboard</h2>
-  <img src="img/dashboard.png" alt="Halaman dashboard">
 
-  <p>Aplikasi dijalankan secara lokal (XAMPP) di <code>http://localhost/pwb_2422500032/</code>.</p>
+  <div class="screenshot">
+    <img src="img/dashboard.png" alt="Halaman Dashboard Administrator">
+    <p class="caption">
+      Gambar 2. Halaman dashboard administrator setelah berhasil login.
+    </p>
+  </div>
+
+  <h2>Informasi Aplikasi</h2>
+
+  <div class="note">
+    Aplikasi dijalankan secara lokal menggunakan XAMPP dengan alamat:
+    <code>http://localhost/pwb_2422500032/</code>
+  </div>
+
 </body>
 </html>
